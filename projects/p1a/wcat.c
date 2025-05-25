@@ -4,18 +4,22 @@
 
 #define BUFFER_SIZE 1000
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
 
   // exit right away if no arguments are passed on command line
-  if (argc == 1) {
+  if (argc == 1)
+  {
     exit(0);
   }
 
   // print each file passed on command line
-  for (int i = 1; i < argc; i++) {
+  for (int i = 1; i < argc; i++)
+  {
     FILE* file = fopen(argv[i], "r");
 
-    if (file == NULL) {
+    if (file == NULL)
+    {
       perror("wcat: cannot open file\n");
       exit(1);
     }
@@ -23,7 +27,8 @@ int main(int argc, char* argv[]) {
     char buffer[BUFFER_SIZE];
     
     // print every line until we reach end-of-file
-    while (fgets(buffer, BUFFER_SIZE, file) != NULL) {
+    while (fgets(buffer, BUFFER_SIZE, file) != NULL)
+    {
       printf("%s", buffer);
     }
   }
